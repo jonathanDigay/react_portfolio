@@ -1,0 +1,67 @@
+.navbar {
+    position:fixed;
+    top:0;
+    left:0;
+    right: 0;
+    height: 80px;
+    max-width:1800px;
+    margin:auto;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    z-index: 2000;
+ 
+    h3 {
+        color: $secondary;
+        letter-spacing: 2px;
+        font-size: 1.5rem;
+        position: relative;
+        padding:5px 10px;
+        font-family: "Original Surfer", cursive;
+        box-shadow: 0 1px  2px 0 rgb(151, 151, 151);
+        border-radius: 0 0 10px 10px;
+        border:1px solid rgba(255, 255, 255, 0.5);
+
+        span{
+            color:$primary;
+        }
+
+    }
+    > .navmenu {
+        flex: 1;
+        display: flex;
+        justify-content: flex-end;
+        gap: 20px;
+        a {
+            color: $secondary;
+            text-decoration: none;
+            font-family: 'Poppins', sans-serif;
+            padding:5px 10px;
+            box-shadow: 0 1px 2px 0 gray;
+            border-radius: 10px;
+            &:hover {
+                transform: translateY(-2px);
+            }
+        }
+        .active{
+            color:$white;
+            font-weight: bold;
+            background: $primary;
+        }
+        @media (max-width: 500px) {
+            display: none;
+        }
+    }
+}
+
+.navbar_active{
+    background: $white;
+
+    transition: all 100ms ease-in-out;
+
+    box-shadow: 0 1px  2px 0 rgb(151, 151, 151);
+    border-radius: 0 0 10px 10px;
+    border:1px solid rgba(255, 255, 255, 0.5);
+}
