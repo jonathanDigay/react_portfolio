@@ -1,8 +1,5 @@
 .navbar {
-    position:fixed;
-    top:0;
-    left:0;
-    right: 0;
+   position: relative;
     height: 80px;
     max-width:1800px;
     margin:auto;
@@ -12,6 +9,7 @@
     justify-content: space-between;
     gap: 20px;
     z-index: 2000;
+    background: $white;
  
     h3 {
         color: $secondary;
@@ -20,9 +18,10 @@
         position: relative;
         padding:5px 10px;
         font-family: "Original Surfer", cursive;
-        box-shadow: 0 1px  2px 0 rgb(151, 151, 151);
-        border-radius: 0 0 10px 10px;
+        box-shadow: 0 1px 2px 0 $secondary;
+        border-radius:10px;
         border:1px solid rgba(255, 255, 255, 0.5);
+        background: $white;
 
         span{
             color:$primary;
@@ -34,34 +33,101 @@
         display: flex;
         justify-content: flex-end;
         gap: 20px;
-        a {
+        >a,li{
             color: $secondary;
             text-decoration: none;
-            font-family: 'Poppins', sans-serif;
-            padding:5px 10px;
-            box-shadow: 0 1px 2px 0 gray;
+            display:inline-block;
+            box-shadow: 0 1px 2px 0 $secondary;
             border-radius: 10px;
+            cursor:pointer;
+            display: grid;
+            place-items: center;
+            background: $white;
+           height:30px;
+           width:80px;
+            position:relative;
+          
             &:hover {
                 transform: translateY(-2px);
             }
+            a{
+               position:relative;
+               top:0;
+               left:0;
+               width:100%;
+               height:100%;
+               display: grid;
+               place-items: center;
+            }
         }
+
+        .li_active{
+            background: $primary;
+            color:$white;
+        }
+        .projectMenu{
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap:2px;
+            &:hover {
+                transform: translateY(0px);
+            }
+           nav{
+               position: absolute;
+               transform: translateY(90%);
+               
+
+
+               display: flex;
+               gap:10px;
+               flex-direction: column;
+               a{
+                   color:$secondary;
+                   background: $white;
+                   box-shadow: 0 1px 2px 0 $secondary;
+                   padding:5px 10px;
+                   border-radius: 10px;
+               }
+
+               a:hover{
+                   color: $primary;
+                   transform: translateY(-2px);
+
+               }
+
+           }
+
+  
+        .project_active {
+            position:absolute;
+            transform: translateY(-100%);
+        }
+        }
+    
         .active{
             color:$white;
             font-weight: bold;
             background: $primary;
         }
-        @media (max-width: 500px) {
+        @media (max-width: 600px) {
             display: none;
         }
     }
 }
 
 .navbar_active{
+   position: fixed;
+   bottom:0;
+   left:0;
+   right: 0;
+    transition: all 500ms ease-in-out;
+
+    box-shadow: 0 1px 2px 0 gray;
+    border-radius: 10px 10px 0 0;
     background: $white;
 
-    transition: all 100ms ease-in-out;
-
-    box-shadow: 0 1px  2px 0 rgb(151, 151, 151);
-    border-radius: 0 0 10px 10px;
-    border:1px solid rgba(255, 255, 255, 0.5);
+    
 }
+

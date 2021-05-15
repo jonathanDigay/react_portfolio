@@ -1,69 +1,114 @@
 .tooglemenu{
-    position:relative;
     display: none;
 
-    .fa-list-ul{
+
+    i{
+        cursor:pointer;
+        padding: 5px;
+        &:hover{
+            color: $primary;
+          }
+        
+    }
+
+    .fa-bars{
         color:$secondary;
         cursor:pointer;
-        &:hover{
-          color: $primary;
-        }
+
     }
-    @media (max-width:500px) {
+    @media (max-width:600px) {
      display: inline-block;
     }
-
+    &::after{
+        content:"";
+        position:absolute;
+        width:100vw;
+        height:80px;
+        top:0;
+        left:0;
+        z-index: -1;
+        background:$white;
+    }
 }
 .tooglemenus{
-    position: fixed;
-    top:50%;
-    left:50%;
-    transform: translate(-50%,-50%);
-    height:50%;
-    width:50%;
-    animation: tooglemenu 1s ease-out;
-    display: none;
-   z-index: 1000;
-   height: 50%;
+  position: absolute;
+  background:$dark;
+  color:white;
+  padding: 10px;
+  bottom:0;
+   top:80px;
+  left:0;
+  right:0;
+  height:150px;
+  text-align: center;
+  animation: navtoogle 700ms ease-in-out 1;
+  z-index: -2;
 
-    @keyframes tooglemenu {
-        from{
-            top:-100%
-        }
-        to{
-            top:50%
-        }
+  display: grid;
+  grid-gap: 10px;
+
+  a{
+      color:$white;
+      display: inline-block;
+      width:100px;
+      position: relative;
+      left:50%;
+      transform: translateX(-50%);
+
+      display:flex;
+      align-items: center;
+      justify-content: center;
+      &:hover{
+          color:$primary;
+      }
+  }
+  .projectMenu{
+      cursor: pointer;
+      width:100px;
+      position: relative;
+      left:50%;
+      transform: translateX(-50%);
+  }
+  .projects{
+      display: flex;
+      gap:20px;
+      justify-content:center;
+      align-items: center;
+      position: absolute;
+      top:60px;
+      width:100%;
+      background: red;
+
+  }
+  @media (max-width:600px) {
+    display:grid;
+   }
+   @media (min-width:600px) {
+    display:none;
+   }
+
+   @keyframes navtoogle  {
+       from{
+           top:-150px;
+       }
+       to{
+           top:80px;
+       }
+   }
+}
+
+.tooglemenu_up{
+    bottom:80px;
+    top:unset;
+   left:0;
+   right:0;
+  animation:navtoogle_up 700ms ease-in-out 1; 
+   @keyframes navtoogle_up  {
+    from{
+        bottom:-150px;
     }
-    a{
-        display: grid;
-        place-items: center;
-        background: $dark;
-        color: $white;
-        box-shadow: 0 0 3px 0 $white;
-        border-radius: 0 0 15px 15px;
-        &:hover{
-            background: $white;
-            box-shadow: 0 0 10px 0 $dark;
-            font-weight: bold;
-          }
+    to{
+        bottom:80px;
     }
-    @media (max-width:500px) {
-        display: grid;
-        grid-template-rows:repeat(4,1fr);
-        grid-gap: 10px;
-        text-align: center;
-        .fa-times{
-              position:absolute;
-              right: 0;
-              background-color: $secondary;
-              color: $primary;
-              padding: 5px;
-              cursor: pointer;
-              border-radius: 0 0 0 5px;
-              box-shadow: 0 0 3px 0 $white;
-            &:hover{
-                color: $white;
-              }
-        }
-    }
+}
 }

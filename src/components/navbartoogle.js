@@ -1,36 +1,50 @@
 import React, { useState } from 'react'
-import { Link } from "react-router-dom"
+import { HashLink as Link } from "react-router-hash-link"
 
 
 
-export default function Navbartoogle(prop) {
+
+export default function Navbartoogle() {
     const [state, setState] = useState(false)
+    const [tooglemenu, setToogleMenu] = useState(false)
 
     const Show = () => {
-        setState(true)
+        state===false?setState(true):setState(false)
     }
     const hide = () => {
         setState(false)
     }
+    
+
+
+    window.addEventListener("scroll",()=>{
+        if(window.scrollY >= 80){
+           setToogleMenu(true)
+        }else{
+            setToogleMenu(false)
+        }
+    })
+
     return (
         <div>
             <div className="tooglemenu">
-                <i className="fas fa-list-ul" onClick={Show}></i>
-
+                <i className={state==false?'fas fa-bars':"fas fa-times"} onClick={Show}></i>
             </div>
             {
                 state === true ?
                  
-                    <div className="tooglemenus">
-                        
-                        <i className="fas fa-times" onClick={hide}></i>
-                        <Link to={prop.to}>Home</Link>
-                        <Link to={prop.to}>About</Link>
-                        <Link to={prop.to}>Projects</Link>
-                        <Link to={prop.to}>Contact</Link>
-                    </div>
+                    <ul className={tooglemenu===true? " tooglemenus tooglemenu_up":"tooglemenus"}>
+                       <Link smooth="true" exact="true" to="#home" onClick={hide}> <li >Home</li></Link>
+                       <Link smooth="true" exact="true" to="#about" onClick={hide}> <li >About</li></Link>
+                        <Link smooth="true" exact="true" to="#projects" onClick={hide}> <li >Projects</li></Link>
+                       <Link smooth="true" exact="true" to="#contact" onClick={hide}><li >Contact</li></Link> 
+                    </ul>
+                
                     : ""
+                
             }
+                       
+          
         </div>
     )
 }

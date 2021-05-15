@@ -1,0 +1,84 @@
+.footer_wrapper{
+   background: $dark;
+   max-width:1800px;
+   margin: auto;
+   margin-bottom: 80px;
+   padding:20px;
+   color: gray;
+
+   display: grid;
+   grid-template-rows: 1fr auto;
+   grid-gap: 20px;
+
+   .footerone{
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+
+
+     .about_me{
+       display: grid;
+       grid-gap: 10px;
+
+       h3{
+         color:$white;
+
+       }
+       p:hover{
+         color:$white;
+         cursor: pointer;
+       }
+      @media (max-width:600px) {
+       display: flex;
+       justify-content: space-between;
+      }
+     }
+     .concern{
+       display: flex;
+       gap:10px;
+
+       height:40px;
+
+       input{
+         height:100%;
+         padding:5px 10px;
+       }
+       input[type="submit"]{
+         background: $primary;
+         color:white;
+         border:none;
+         cursor:pointer;
+       }
+     }
+     .social_media{
+       display: flex;
+       gap:20px;
+       i{
+         color:$primary;
+         font-size: 20px;
+         &:hover{
+           color:$white;
+         }
+       }
+     }
+     @media (max-width:600px) {
+       flex-direction: column;
+       gap:20px;
+     }
+   }
+   .footertwo{
+     display: flex;
+     flex-direction: column;
+     text-align: center;
+     gap:10px;
+
+     h3{
+       color:$white;
+       letter-spacing: 1px;
+
+       span{
+         color:$primary;
+       }
+     }
+   }
+}

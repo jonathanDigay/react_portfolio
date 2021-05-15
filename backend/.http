@@ -1,0 +1,10 @@
+POST  http://localhost:3001/person/send
+Content-Type: application/json
+
+{
+    "firstname":"jonathan pelobello Digay",
+    "lastname":"digay",
+    "emailaddress":"jonatan.digay1@mail.com",
+    "phonenumber":"Digay123",
+    "message":"hello to me"
+}

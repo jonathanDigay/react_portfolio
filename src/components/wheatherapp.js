@@ -1,37 +1,37 @@
-import React,{useState } from "react";
+import React, { useState } from "react"
 import Sunny from "./album/sunny.jpg"
+import Cloudy from "./album/cloudy.jpg"
+
 
 export default function Wheatherapp() {
 
   const [form, setform] = useState({
-    city:"",
-    country:""
+    city: "",
+    country: ""
   })
-  const [weather,setweather]=useState([])
+  const [weather, setWeather] = useState()
 
   const { city, country } = form
 
   const formonChange = (element) => {
-
-    const { value, name }=element.target
-
-    setform({...form,[name]:value})
+    const { value, name } = element.target
+    setform({ ...form, [name]: value })
   }
 
 
 
-  const Search=async(e)=>{
-    const API="dbbbb981c9d74abfa85120525210205";
-   
-    e.preventDefault()
-    if(city==="" || country===""){
-      alert("Please complete Fillup the Form")
-    }else{
-     const Data= await fetch(`https://api.weatherapi.com/v1/current.json?key=${API}&q=${city},${country}`)
-      .then(res=>res.json()).then((data)=>data)
+  const Search = async (e) => {
+    const API = "dbbbb981c9d74abfa85120525210205";
 
-      setweather(Data)
-      console.log(weather)
+    e.preventDefault()
+    if (city === "" || country === "") {
+      alert("Please complete Fillup the Form")
+    } else {
+      const Data = await fetch(`https://api.weatherapi.com/v1/current.json?key=${API}&q=${city},${country}`)
+        .then(res => res.json()).then((data) => data)
+
+      setWeather(Data)
+
     }
 
 
@@ -40,8 +40,8 @@ export default function Wheatherapp() {
 
 
   return (
-    <div>
-      <div className="wheatherapp_conatiner">
+    <div id="weatherapp">
+      <div className="wheatherapp_conatiner" >
         <h4>Project #2:Wheather App</h4>
         <div className="wheatherapp_wrapper">
 
@@ -58,32 +58,50 @@ export default function Wheatherapp() {
           </div>
 
 
+          {
+            weather !== undefined ?
+
+              <div className="wheather_info">
+                <div className="temp_bg">
+                  {
+                   weather.current.temp_c >= 31?
+                   <img src={Sunny} alt="" />
+                   :
+                   <img src={Cloudy} alt="" />
+                  }
+                </div>
+
+                <div className="wheather_temp">
+                {
+                   weather.current.temp_c >=31?
+                   <i className="fas fa-sun"></i>
+                   :
+                   <i className="fas fa-cloud"></i>
+                  }
+                  <h1> {weather.current.temp_c} <sup>o</sup> </h1>
+                </div>
 
 
-          <div className="wheather_info">
-             <div className="sunny">
-               <img src={Sunny} alt=""/>
-             </div>
-      
-            <div className="wheather_temp">
-              <i className="fas fa-sun"></i>
-  
-              <h1> <sup>o</sup> </h1>
-            </div>
+                <div className="whether_desciption">
+                  <h3>{weather.location.region},{weather.location.country}</h3>
+                </div>
 
+                <div className="wheather_address">
+                  <p>Date:{new Date().toLocaleDateString()} As of {new Date().toLocaleTimeString()}</p>
+                </div>
 
-            <div className="whether_desciption">
-              <h2>Sunny</h2>
-              <p> </p>
-            </div>
+              </div>
+            : <div className="wheather_info">
+                <div className="weather_bg">
+                  <img src={Sunny} alt="" />
+                  <img src={Cloudy} alt="" />
+                  <h1 className="default_text">Search weather on your area </h1>
+                </div>
 
-            <div className="wheather_address">
-              <p>Date:{new Date().toLocaleDateString()} As of {new Date().toLocaleTimeString()}</p>
-              <a href="https://www.weatherapi.com/" title="Free Weather API">WeatherAPI.com</a>
-            </div>
+               
 
-          </div>
-
+              </div>
+          }
 
         </div>
 

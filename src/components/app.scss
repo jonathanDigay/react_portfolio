@@ -7,17 +7,24 @@
     box-sizing: border-box;
     font-family: 'Roboto', sans-serif;
 }
-a{
-    text-decoration: none;
-}
-
 $primary:#c405c7;
 $secondary:navy;
 $white:rgb(238, 238, 238);
 $dark:#333;
+a{
+    text-decoration: none;
+    color:$secondary;
+    font-family: 'Poppins', sans-serif;
+}
+li{
+    list-style: none;
+}
+
 
 @import "./navbar.scss";
 @import "./navbartoogle.scss";
 @import "./hero.scss";
 @import "./about.scss";
 @import "./projects.scss";
+@import "./contact.scss";
+@import "./footer.scss";
