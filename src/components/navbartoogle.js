@@ -28,7 +28,7 @@ export default function Navbartoogle() {
     return (
         <div>
             <div className="tooglemenu">
-                <i className={state==false?'fas fa-bars':"fas fa-times"} onClick={Show}></i>
+                <i className={state===false?'fas fa-bars':"fas fa-times"} onClick={Show}></i>
             </div>
             {
                 state === true ?

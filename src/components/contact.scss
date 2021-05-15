@@ -104,6 +104,7 @@
           border-radius: 10px;
           padding:0 20px;
           outline:none;
+          font-size: 15px;
           &:focus~span,&:valid~span{
             transform: translateY(-37px);
             color:$white;
@@ -119,6 +120,7 @@
           transform:translateY(-50%);
           opacity: .7;
         pointer-events: none;
+        font-size: 16px; 
         }
       }
       .textarea {
@@ -135,6 +137,7 @@
           padding-left:20px;
           padding-top:20px;
           outline:none;
+          font-size: 15px;
           &:focus~span,&:valid~span{
             transform: translateY(-47px);
             color:$white;
