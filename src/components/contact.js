@@ -1,44 +1,20 @@
-import React,{useState} from "react"
-import axios from "axios"
+import React from "react"
+import { useForm } from "./contactform.js"
 
 export default function Contact(){
-  const [state,setState]=useState({
+
+  let initialvalue={
     firstname:"",
     lastname:"",
     emailaddress:"",
     phonenumber:"",
     message:""
-})
-  const {firstname,lastname,emailaddress,phonenumber,message}=state
-  const handleOnChange=(e)=>{
-    const {name,value}=e.target
-    setState({...state,[name]:value})
-
   }
 
-  const Submit=(e)=>{
-    e.preventDefault()
+  const [values,handleOnChange,Submit]=useForm(initialvalue)
+  const {firstname,lastname,emailaddress,phonenumber,message}=values
+  console.log("values:", values.firstname)
 
-    const Person={
-      firstname,
-      lastname,
-      emailaddress,
-      phonenumber,
-      message
-    }
-    console.log(Person)
-
-    axios.post("http://localhost:3001/person/send", Person)
-
-    setState({
-      firstname:"",
-      lastname:"",
-      emailaddress:"",
-      phonenumber:"",
-      message:""
-    })
-
-  }
 
   return(
     <div>
