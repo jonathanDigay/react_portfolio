@@ -14,10 +14,10 @@ export default function Footer() {
             </div>
 
 
-              <form className="concern" >
+              <div className="concern" >
                 <input type="text"  placeholder="Send Concern.."/>
                 <button>Submit</button>
-              </form>
+              </div>
 
 
             <div className="social_media">
