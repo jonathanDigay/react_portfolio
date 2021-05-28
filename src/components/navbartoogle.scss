@@ -5,16 +5,14 @@
     i{
         cursor:pointer;
         padding: 5px;
+        position: absolute;
+        right:10px;
+        top:50%;
+        transform: translateY(-50%);
         &:hover{
             color: $primary;
           }
         
-    }
-
-    .fa-bars{
-        color:$secondary;
-        cursor:pointer;
-
     }
     @media (max-width:600px) {
      display: inline-block;
@@ -31,7 +29,7 @@
     }
 }
 .tooglemenus{
-  position: absolute;
+  position: fixed;
   background:$dark;
   color:white;
   padding: 10px;
@@ -95,20 +93,4 @@
            top:80px;
        }
    }
-}
-
-.tooglemenu_up{
-    bottom:80px;
-    top:unset;
-   left:0;
-   right:0;
-  animation:navtoogle_up 700ms ease-in-out 1; 
-   @keyframes navtoogle_up  {
-    from{
-        bottom:-150px;
-    }
-    to{
-        bottom:80px;
-    }
-}
 }

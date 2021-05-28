@@ -19,13 +19,17 @@ export default function Todolist() {
   // create todo
   const create = (e) => {
     e.preventDefault();
-    const inputvalue = todolist;
-    inputvalue.push(todo);
-    setState({ ...state, todo: "", todolist: inputvalue });
+    if(todo.trim()){
+      const inputvalue = todolist;
+      inputvalue.push(todo);
+      setState({ ...state, todo: "", todolist: inputvalue });
+    }
+
   };
 
   // delete todo
   const deletepending = (index) => {
+    
     const inputvalue = todolist;
     inputvalue.splice(index, 1);
     setState({ ...state, todo: "", todolist: inputvalue });

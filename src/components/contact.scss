@@ -105,6 +105,7 @@
           padding:0 20px;
           outline:none;
           font-size: 15px;
+          font-size: inherit;
           &:focus~span,&:valid~span{
             transform: translateY(-37px);
             color:$white;
