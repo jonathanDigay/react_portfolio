@@ -1,9 +1,6 @@
 import React, { useState } from 'react'
 import { HashLink as Link } from "react-router-hash-link"
 
-
-
-
 export default function Navbartoogle() {
     const [state, setState] = useState(false)
 
@@ -24,7 +21,7 @@ export default function Navbartoogle() {
             {
                 state === true ?
                  
-                    <ul className={state===true? " tooglemenus ":"tooglemenus"}>
+                    <ul className="tooglemenus">
                        <Link smooth="true" exact="true" to="#home" onClick={hide}> <li >Home</li></Link>
                        <Link smooth="true" exact="true" to="#about" onClick={hide}> <li >About</li></Link>
                         <Link smooth="true" exact="true" to="#projects" onClick={hide}> <li >Projects</li></Link>
