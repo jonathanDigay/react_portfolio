@@ -1,7 +1,9 @@
-
+import React,{useState} from "react"
 import heroimage from "./album/me.png"
 
+
 export default function Hero() {
+
 
     return (
         <div>

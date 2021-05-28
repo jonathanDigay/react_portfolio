@@ -4,15 +4,9 @@ import { HashLink as Link } from "react-router-hash-link"
 import Navbartoogle from "./navbartoogle.js"
 
 function Navbar() {
-    const [navbar, setnavbar] = useState(false)
     const [project, setproject] = useState(false)
      const [active, isactive]=useState("Home")
-    const scrollNav = () => {
-        window.scrollY >= 80 ?
-            setnavbar(true)
-            : setnavbar(false)
-    }
-    window.addEventListener("scroll", scrollNav)
+   
 
     const Projects = () => {
         project === false ?
@@ -24,10 +18,9 @@ function Navbar() {
         const target= e.target.innerText
         isactive(target)
     }
-
     return (
         <div>
-            <div className={navbar === true ? 'navbar navbar_active ' : 'navbar'}>
+            <div id="navbar" className='navbar'>
                 <h3 ><span>D</span>iga<span>Y</span><span>R</span>eac<span>T</span></h3>
 
                 <nav className="navmenu " >
@@ -38,7 +31,7 @@ function Navbar() {
                         {
                             project === true ?
                             
-                                <nav className={navbar === true ? 'project_active ' : ''}>
+                                <nav>
                                 <Link smooth="true" exact="true" to="#todolist">Todolist</Link>
                                 <Link smooth="true" exact="true" to="#weatherapp">Weather</Link>
                             </nav>
@@ -53,7 +46,6 @@ function Navbar() {
                 </nav>
                 <Navbartoogle />
             </div>
-
         </div>
     )
 }

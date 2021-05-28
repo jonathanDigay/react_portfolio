@@ -2,7 +2,6 @@
    background: $dark;
    max-width:1800px;
    margin: auto;
-   margin-bottom: 80px;
    padding:20px;
    color: gray;
 
@@ -42,13 +41,17 @@
        input{
          height:100%;
          padding:5px 10px;
+         border-radius: 5px;
        }
-       input[type="submit"]{
+       button{
          background: $primary;
          color:white;
          border:none;
          cursor:pointer;
-       }
+         height:100%;
+         border-radius: 5px;
+        padding:5px;
+        }
      }
      .social_media{
        display: flex;

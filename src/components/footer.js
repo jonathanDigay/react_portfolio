@@ -16,7 +16,7 @@ export default function Footer() {
 
               <form className="concern" >
                 <input type="text"  placeholder="Send Concern.."/>
-                <input type="submit" value="Submit" />
+                <button>Submit</button>
               </form>
 
 

@@ -12,6 +12,7 @@ import Contact from "./components/contact.js"
 import Footer from "./components/footer.js"
 
 const App=()=>{
+     
     return (
         <>
            <Navbar/>
