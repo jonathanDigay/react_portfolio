@@ -89,7 +89,7 @@
       display: grid;
       grid-template-columns: 1fr 1fr;
       grid-template-rows: auto auto 1fr auto;
-      grid-gap: 20px;
+
       .span2 {
         grid-column: span 2;
       }
@@ -97,7 +97,7 @@
         position: relative;
         height: 40px;
         width: 100%;
-
+        margin-bottom:20px;
         input {
           height: 40px;
           width: 100%;
