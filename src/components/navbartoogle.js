@@ -6,7 +6,6 @@ import { HashLink as Link } from "react-router-hash-link"
 
 export default function Navbartoogle() {
     const [state, setState] = useState(false)
-    const [tooglemenu, setToogleMenu] = useState(false)
 
     const Show = () => {
      setState(true)
