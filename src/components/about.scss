@@ -31,7 +31,7 @@
                  right: 0;
                  top:0;
                  bottom: 0;
-                 background:linear-gradient(90deg,transparent,$secondary);
+                 background:linear-gradient(90deg,transparent,$primary);
                  z-index: 2;
 
              }
@@ -45,7 +45,7 @@
         position: relative;
         text-align: center;
         padding:  30px;
-        background: $secondary;
+        background: $primary;
         border-radius: 0 10px 10px 0;
 
         display: grid;
@@ -80,7 +80,10 @@
            bottom: 0;
            background:transparent;
            z-index: 2;
-           
+           h1,p{
+
+            color:black;
+           }
         }
     }
 }
