@@ -3,7 +3,7 @@ const mongoose=require("mongoose")
 const cors=require("cors")
 const App=Express()
 require("dotenv").config()
-const Port="digay.vercel.app" || 3000 
+const Port=process.env.PORT || 3000 
 
 
 // midddleware
