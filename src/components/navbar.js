@@ -5,8 +5,8 @@ import Navbartoogle from "./navbartoogle.js"
 
 function Navbar() {
     const [project, setproject] = useState(false)
-     const [active, isactive]=useState("Home")
-   
+    const [active, isactive] = useState("Home")
+
 
     const Projects = () => {
         project === false ?
@@ -14,8 +14,8 @@ function Navbar() {
             : setproject(false)
     }
 
-    const Active=(e)=>{
-        const target= e.target.innerText
+    const Active = (e) => {
+        const target = e.target.innerText
         isactive(target)
     }
     return (
@@ -24,24 +24,23 @@ function Navbar() {
                 <h3 ><span>D</span>iga<span>Y</span><span>R</span>eac<span>T</span></h3>
 
                 <nav className="navmenu " >
-                    <Link onClick={Active} className={active==="Home"?"li_active":""} smooth="true" exact="true" to="#home">Home</Link>
-                    <Link onClick={Active} className={active==="About"?"li_active":""} smooth="true" exact="true" to="#about" >About</Link>
-                    <li className="projectMenu"  smooth="true" exact="true" to="#projects" onClick={Projects} >Projects <i className="fas fa-angle-down"></i>
+                    <Link onClick={Active} className={active === "Home" ? "li_active" : ""} smooth="true" exact="true" to="#home">Home</Link>
+                    <li className="projectMenu" smooth="true" exact="true" to="#projects" onClick={Projects} >Projects <i className="fas fa-angle-down"></i>
 
                         {
                             project === true ?
-                            
+
                                 <nav>
-                                <Link smooth="true" exact="true" to="#todolist">Todolist</Link>
-                                <Link smooth="true" exact="true" to="#weatherapp">Weather</Link>
-                            </nav>
-                            : ""
-                            
-       
+                                    <Link smooth="true" exact="true" to="#todolist">Todolist</Link>
+                                    <Link smooth="true" exact="true" to="#weatherapp">Weather</Link>
+                                </nav>
+                                : ""
+
+
                         }
 
                     </li>
-                    <Link onClick={Active} className={active==="Contact"?"li_active":""} smooth="true" exact="true" to="#contact">Contact</Link>
+                    <Link onClick={Active} className={active === "Contact" ? "li_active" : ""} smooth="true" exact="true" to="#contact">Contact</Link>
 
                 </nav>
                 <Navbartoogle />
