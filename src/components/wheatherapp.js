@@ -40,7 +40,7 @@ export default function Wheatherapp() {
 
 
   return (
-    <div id="weatherapp">
+    <div id="weather">
       <div className="wheatherapp_conatiner" >
         <h4>Project #2:Wheather App</h4>
         <div className="wheatherapp_wrapper">
@@ -64,19 +64,19 @@ export default function Wheatherapp() {
               <div className="wheather_info">
                 <div className="temp_bg">
                   {
-                   weather.current.temp_c >= 31?
-                   <img src={Sunny} alt="" />
-                   :
-                   <img src={Cloudy} alt="" />
+                    weather.current.temp_c >= 31 ?
+                      <img src={Sunny} alt="" />
+                      :
+                      <img src={Cloudy} alt="" />
                   }
                 </div>
 
                 <div className="wheather_temp">
-                {
-                   weather.current.temp_c >=31?
-                   <i className="fas fa-sun"></i>
-                   :
-                   <i className="fas fa-cloud"></i>
+                  {
+                    weather.current.temp_c >= 31 ?
+                      <i className="fas fa-sun"></i>
+                      :
+                      <i className="fas fa-cloud"></i>
                   }
                   <h1> {weather.current.temp_c} <sup>o</sup> </h1>
                 </div>
@@ -91,14 +91,14 @@ export default function Wheatherapp() {
                 </div>
 
               </div>
-            : <div className="wheather_info">
+              : <div className="wheather_info">
                 <div className="weather_bg">
                   <img src={Sunny} alt="" />
                   <img src={Cloudy} alt="" />
                   <h1 className="default_text">Search weather on your area </h1>
                 </div>
 
-               
+
 
               </div>
           }

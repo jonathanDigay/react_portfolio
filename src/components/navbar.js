@@ -1,6 +1,4 @@
 import React, { useState } from 'react'
-
-import { HashLink as Link } from "react-router-hash-link"
 import Navbartoogle from "./navbartoogle.js"
 
 function Navbar() {
@@ -8,7 +6,9 @@ function Navbar() {
     const [active, isactive] = useState("Home")
 
 
-    const Projects = () => {
+    const Projects = (e) => {
+        const target = e.target.innerText
+        isactive(target)
         project === false ?
             setproject(true)
             : setproject(false)
@@ -24,15 +24,17 @@ function Navbar() {
                 <h3 ><span>D</span>iga<span>Y</span><span>R</span>eac<span>T</span></h3>
 
                 <nav className="navmenu " >
-                    <Link onClick={Active} className={active === "Home" ? "li_active" : ""} smooth="true" exact="true" to="#home">Home</Link>
-                    <li className="projectMenu" smooth="true" exact="true" to="#projects" onClick={Projects} >Projects <i className="fas fa-angle-down"></i>
+                    <li onClick={Active} className={active === "Home" ? "li_active" : ""}> <a href="#home">Home</a> </li>
+                    <li onClick={Projects}
+                        className={active === "Projects" ? "li_active projectMenu" : "projectMenu"}
+                    > <a href="#project"> Projects</a>
 
                         {
                             project === true ?
 
                                 <nav>
-                                    <Link smooth="true" exact="true" to="#todolist">Todolist</Link>
-                                    <Link smooth="true" exact="true" to="#weatherapp">Weather</Link>
+                                    <li onClick={Active} className={"Todolist" === "Home" ? "li_active" : ""}> <a href="#todolist"> Todolist</a></li>
+                                    <li onClick={Active} className={"Weather" === "Home" ? "li_active" : ""}> <a href="#weather">Weather</a> </li>
                                 </nav>
                                 : ""
 
@@ -40,7 +42,7 @@ function Navbar() {
                         }
 
                     </li>
-                    <Link onClick={Active} className={active === "Contact" ? "li_active" : ""} smooth="true" exact="true" to="#contact">Contact</Link>
+                    <li onClick={Active} className={active === "Contact" ? "li_active" : ""}> <a href="#contact">Contact</a> </li>
 
                 </nav>
                 <Navbartoogle />

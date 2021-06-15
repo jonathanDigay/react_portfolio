@@ -1,13 +1,13 @@
 .todolist_wrapper {
   position: relative;
+  padding-top: 50px;
 }
 .todolist {
   min-height: 200px;
-  width:95%;
+  width: 95%;
   margin: auto;
   display: grid;
   grid-template-columns: 1fr 1fr;
-
 
   .todo_form {
     height: 100%;
@@ -30,48 +30,45 @@
       padding: 5px 10px;
       border-radius: 5px;
 
-      &:hover{
-        color:white;
+      &:hover {
+        color: white;
       }
     }
   }
   .todos {
-    height:200px;
+    height: 200px;
     overflow: hidden;
     overflow-y: scroll;
     position: relative;
 
+    &::-webkit-scrollbar {
+      width: 10px;
+    }
 
-&::-webkit-scrollbar {
-  width: 10px;
-}
+    &::-webkit-scrollbar-thumb {
+      background: $secondary;
+      margin: 20px;
+      border-radius: 5px;
+    }
 
+    &::-webkit-scrollbar-thumb:hover {
+      background: #555;
+    }
 
-&::-webkit-scrollbar-thumb {
-  background:$secondary;
-  margin: 20px;
-  border-radius: 5px;
-}
-
-&::-webkit-scrollbar-thumb:hover {
-  background: #555;
-}
-   
-    .pending_count{
+    .pending_count {
       display: inline-block;
       font-weight: normal;
-      padding:5px;
-      border-radius:5px;
+      padding: 5px;
+      border-radius: 5px;
       background: $primary;
-      color:white;
+      color: white;
     }
     .todo_items {
       margin-bottom: 10px;
       .todo_item {
-
         background: $primary;
         padding: 10px;
-        color:white;
+        color: white;
         margin-bottom: 5px;
       }
       .todo_action {
@@ -80,248 +77,233 @@
         justify-content: center;
         align-items: center;
 
-
         button {
           border: none;
           cursor: pointer;
           background: none;
           font-size: 18px;
-          width:30px;
-          height:30px;
+          width: 30px;
+          height: 30px;
           box-shadow: 0 1px 5px 0 gray;
           border-radius: 10px;
 
-          &:hover{
+          &:hover {
             box-shadow: 0 1px 2px 2px gray;
           }
         }
-        .fa-trash{
-          color:red;
+        .fa-trash {
+          color: red;
         }
-        .fa-edit{
-          color:rgb(69, 69, 241);
+        .fa-edit {
+          color: rgb(69, 69, 241);
         }
-        .fa-check{
-          color:blue;
+        .fa-check {
+          color: blue;
         }
       }
     }
   }
 
-  .todo_complete{
+  .todo_complete {
     grid-column: span 2;
     text-align: right;
-    position: absolute; 
-    width:100%;
-    top:0;
-    right:12px;
+    position: absolute;
+    width: 100%;
+    top: 0;
+    right: 12px;
 
-    .complete_nav{
-      background:$secondary;
+    .complete_nav {
+      background: $secondary;
       display: inline-block;
       border-radius: 20px;
       position: relative;
       cursor: pointer;
 
-      &:hover{
-        .comlete_tooltip{
-          opacity: .7;
+      &:hover {
+        .comlete_tooltip {
+          opacity: 0.7;
         }
       }
 
-      .fa-check{
-        color:white;
-        padding:10px;   
-      &:hover{
-        opacity: .7;
-      }
+      .fa-check {
+        color: white;
+        padding: 10px;
+        &:hover {
+          opacity: 0.7;
+        }
       }
 
-      .fa-angle-down{
+      .fa-angle-down {
         position: absolute;
-        bottom:0;
-        left:50%;
+        bottom: 0;
+        left: 50%;
         font-size: 10px;
-       transform: translateX(-50%);
-        color:$white;
+        transform: translateX(-50%);
+        color: $white;
       }
 
-      .comlete_tooltip{
-         position: absolute;
-         left:-200%;
-         background: $secondary;
-         padding: 5px 10px;
-         border-radius: 10px;
-         font-size: 14px;
-         color:white;
-         opacity: 0;
-         transition: all 500ms ease-in-out;
-         pointer-events: none;
-      }
-
-    }
-
-    .complete_count{
- display: inline-block;
- font-weight: normal;
- height: 20px;
- width: 20px;
- border-radius:50px;
- background: $primary;
- color:white;
- position: absolute;
- top: -16px;
- right:0;
- display: grid;
- place-items: center;
-
-
-    }
-    .complete_wrapper{
-
+      .comlete_tooltip {
         position: absolute;
-       width: 50%;
-       right:0;
-       height: 200px;
-       overflow-y: scroll;
-       background: $dark;
-       text-align: left;
-       padding:20px;
-       color: white;
- 
-       border-top: 1px solid rgb(204, 203, 203);
-       border-radius: 10px 10px 10px 10px;
-       box-shadow: 0 5px  5px 0 rgb(151, 151, 151);
-      
-       
-&::-webkit-scrollbar {
-  width: 10px;
-}
+        left: -200%;
+        background: $secondary;
+        padding: 5px 10px;
+        border-radius: 10px;
+        font-size: 14px;
+        color: white;
+        opacity: 0;
+        transition: all 500ms ease-in-out;
+        pointer-events: none;
+      }
+    }
 
+    .complete_count {
+      display: inline-block;
+      font-weight: normal;
+      height: 20px;
+      width: 20px;
+      border-radius: 50px;
+      background: $primary;
+      color: white;
+      position: absolute;
+      top: -16px;
+      right: 0;
+      display: grid;
+      place-items: center;
+    }
+    .complete_wrapper {
+      position: absolute;
+      width: 50%;
+      right: 0;
+      height: 200px;
+      overflow-y: scroll;
+      background: $dark;
+      text-align: left;
+      padding: 20px;
+      color: white;
 
-&::-webkit-scrollbar-thumb {
-  background:$primary;
-  margin: 20px;
-  border-radius: 5px;
-}
+      border-top: 1px solid rgb(204, 203, 203);
+      border-radius: 10px 10px 10px 10px;
+      box-shadow: 0 5px 5px 0 rgb(151, 151, 151);
 
-&::-webkit-scrollbar-thumb:hover {
-  background: #555;
-}
+      &::-webkit-scrollbar {
+        width: 10px;
+      }
 
- 
-      
-        .no_record{
-        color:$white;
+      &::-webkit-scrollbar-thumb {
+        background: $primary;
+        margin: 20px;
+        border-radius: 5px;
+      }
+
+      &::-webkit-scrollbar-thumb:hover {
+        background: #555;
+      }
+
+      .no_record {
+        color: $white;
         text-align: left;
         margin-top: 20px;
       }
-    .complete_todo{
-      display: flex;
-      align-items: center;
-      width:100%;
-      margin: auto;
-      height: 30px;
-
-      text-align: left;
-      margin: 20px 0;
-
-       
-     
-
-      .complete{
-        flex: 1;
-        text-align: left;
-        font-size: 18px;
-        background: $white;
-        color: $dark;
-        height: 100%;
+      .complete_todo {
         display: flex;
         align-items: center;
-        padding: 10px;
+        width: 100%;
+        margin: auto;
+        height: 30px;
 
-        border-top: 1px solid rgb(204, 203, 203);
-        border-radius: 10px 10px 10px 10px;
-        box-shadow: 0 0  3px 0 rgb(151, 151, 151);
-        
-      }
-      .fa-trash{
-        padding: 5px;
-        color: $primary;
-        cursor: pointer;
-        height: 100%;
-        background: $white;
-        margin-left: 5px;
+        text-align: left;
+        margin: 20px 0;
 
-        border-top: 1px solid rgb(204, 203, 203);
-        border-radius: 10px 10px 10px 10px;
-        box-shadow: 0 0  3px 0 rgb(151, 151, 151);
+        .complete {
+          flex: 1;
+          text-align: left;
+          font-size: 18px;
+          background: $white;
+          color: $dark;
+          height: 100%;
+          display: flex;
+          align-items: center;
+          padding: 10px;
 
-        &:hover{
-          color: red;
+          border-top: 1px solid rgb(204, 203, 203);
+          border-radius: 10px 10px 10px 10px;
+          box-shadow: 0 0 3px 0 rgb(151, 151, 151);
+        }
+        .fa-trash {
+          padding: 5px;
+          color: $primary;
+          cursor: pointer;
+          height: 100%;
+          background: $white;
+          margin-left: 5px;
+
+          border-top: 1px solid rgb(204, 203, 203);
+          border-radius: 10px 10px 10px 10px;
+          box-shadow: 0 0 3px 0 rgb(151, 151, 151);
+
+          &:hover {
+            color: red;
+          }
         }
       }
-    }
 
-
-    @media (max-width:500px) {
-      width:90%;
-      
+      @media (max-width: 500px) {
+        width: 90%;
+      }
     }
-    }  
   }
 
-  .update_modal{
+  .update_modal {
     position: fixed;
-    width:400px;
-    height:300px;
-    top:50%;
-    left:50%;
-    transform: translate(-50%,-50%);
+    width: 400px;
+    height: 300px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     background: $secondary;
-    z-index:99;
+    z-index: 99;
     border-radius: 10px;
     box-shadow: 0 0 12px 0 gray;
 
     display: grid;
     place-items: center;
-    .update_form{
+    .update_form {
       display: grid;
       grid-template-rows: 1fr 1fr;
-      width:70%;
+      width: 70%;
       margin: auto;
       grid-gap: 20px;
-       
-      input{
-        padding:0 20px;
-        width:100%;
+
+      input {
+        padding: 0 20px;
+        width: 100%;
         border-radius: 5px;
         font-size: inherit;
       }
-      .update_action{
+      .update_action {
         display: flex;
         justify-content: center;
-        gap:20px;
+        gap: 20px;
 
-        button{
-          padding:10px;
+        button {
+          padding: 10px;
           cursor: pointer;
           border: none;
           border-radius: 5px;
-          &:hover{
+          &:hover {
             background: $primary;
-            color:white;
+            color: white;
           }
         }
       }
     }
-   @media (max-width:500px) {
-     width:90%;
-     height:50%;
-   }
+    @media (max-width: 500px) {
+      width: 90%;
+      height: 50%;
+    }
   }
 
-  @media (max-width:500px) {
+  @media (max-width: 500px) {
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 1fr;
   }

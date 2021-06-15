@@ -4,6 +4,7 @@
     margin: auto;
     margin-bottom: 50px;
     padding-bottom: 30px;
+    padding-top: 50px;
 
     .wheatherapp_wrapper {
         max-width: 80%;
@@ -44,14 +45,14 @@
                 height: 40px;
                 padding: 5px 10px;
                 border: none;
-                background: $secondary;
+                background: $primary;
                 color: white;
                 border-radius: 10px;
                 cursor: pointer;
                 font-size: 18px;
 
                 &:hover {
-                    color: $primary;
+                    transform: scale(0.9);
                 }
             }
 
@@ -94,7 +95,6 @@
                     border-radius: 10px;
                     opacity: 0.7;
                     object-position: left;
-                    
                 }
             }
 
@@ -106,12 +106,12 @@
                     font-size: 60px;
                     animation: rotate 5s ease-in-out infinite;
                 }
-          
+
                 .fa-sun {
                     color: coral;
                 }
-                .fa-cloud{
-                    color:rgb(146, 142, 142);
+                .fa-cloud {
+                    color: rgb(146, 142, 142);
                 }
             }
 
@@ -119,24 +119,23 @@
             .wheather_address {
                 z-index: 1;
             }
-            @media (max-width:500px){
+            @media (max-width: 500px) {
                 display: flex;
                 flex-direction: column;
                 align-items: center;
                 justify-content: center;
 
-                .wheather_temp{
+                .wheather_temp {
                     flex: 1;
                     align-self: center;
                     justify-content: center;
                 }
-                .whether_desciption{
-                    height:20%;
+                .whether_desciption {
+                    height: 20%;
                 }
-                .wheather_address{
-                    height:20%;
+                .wheather_address {
+                    height: 20%;
                 }
-
             }
         }
 
@@ -150,27 +149,25 @@
             img {
                 width: 50%;
                 object-fit: cover;
-                object-position:left;
-
+                object-position: left;
             }
-            img:nth-child(1){
-                border-radius:10px  0 0  10px ;
+            img:nth-child(1) {
+                border-radius: 10px 0 0 10px;
             }
-            img:nth-child(2){
-                border-radius:0 10px 10px 0;
+            img:nth-child(2) {
+                border-radius: 0 10px 10px 0;
             }
         }
-        .default_text{
+        .default_text {
             position: absolute;
-            top:50%;
-            left:50%;
-            transform: translate(-50%,-50%);
-            opacity:.7;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            opacity: 0.7;
 
-            @media (max-width:500px){
+            @media (max-width: 500px) {
                 font-size: 15px;
             }
         }
-    
     }
 }

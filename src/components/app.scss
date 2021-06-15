@@ -5,8 +5,10 @@
     padding: 0;
     box-sizing: border-box;
     font-family: "Roboto", sans-serif;
+    scroll-behavior: smooth;
 }
-$primary: rgb(5, 5, 168);
+
+$primary: rgb(40, 57, 218);
 $secondary: navy;
 $white: rgb(238, 238, 238);
 $dark: #333;
